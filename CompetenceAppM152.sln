@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceAppM152.Client.UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceAppM152.Server.DataAccessLayer", "CompetenceAppM152.DataAccessLayer\CompetenceAppM152.Server.DataAccessLayer.csproj", "{39E5EF3F-F423-4938-8615-28B99F0A817F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceAppM152.Common", "CompetenceAppM152.Common\CompetenceAppM152.Common.csproj", "{1FB286F2-1D74-4628-95C2-832DE7CD6425}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceAppM152.Server.DomainLayer", "CompetenceAppM152.Server.DomainLayer\CompetenceAppM152.Server.DomainLayer.csproj", "{006370C0-9CD3-4E15-BD65-B8883FA09DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompetenceAppM152.Common", "CompetenceAppM152.Common\CompetenceAppM152.Common.csproj", "{1FB286F2-1D74-4628-95C2-832DE7CD6425}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{39E5EF3F-F423-4938-8615-28B99F0A817F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39E5EF3F-F423-4938-8615-28B99F0A817F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39E5EF3F-F423-4938-8615-28B99F0A817F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Release|Any CPU.Build.0 = Release|Any CPU
 		{006370C0-9CD3-4E15-BD65-B8883FA09DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{006370C0-9CD3-4E15-BD65-B8883FA09DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{006370C0-9CD3-4E15-BD65-B8883FA09DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{006370C0-9CD3-4E15-BD65-B8883FA09DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB286F2-1D74-4628-95C2-832DE7CD6425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
