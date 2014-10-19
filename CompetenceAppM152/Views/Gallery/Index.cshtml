@@ -1,0 +1,32 @@
+﻿@model CompetenceAppM152.Client.UI.Web.VieModels.GalleryViewModel
+@using ImageResizer
+@using System.Web.Mvc
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gallery</h2>
+@Html.ActionLink("Neues Album erstellen", "NewGallery")
+
+@{
+    int counter = 1;
+}
+<div class="container">
+    @foreach (var g in Model.Galleries)
+    {
+        <div class="row" style="margin-bottom:15px">
+            <div class="@string.Format("col-md-{0}", counter.ToString())">
+                @if (g.TitlePicture == null)
+                {
+                    <img src="~/Content/app/img/noPictureAvailable.jpg?width=200" alt="no image available" />
+                }
+                else
+                {
+                    <img src="@Url.Content(g.TitlePicture.Path)" alt="picture" />
+                }
+            </div>
+        </div>
+    }
+</div>
