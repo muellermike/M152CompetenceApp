@@ -7,8 +7,8 @@
     <ProjectGuid>{39E5EF3F-F423-4938-8615-28B99F0A817F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CompetenceAppM152.DataAccessLayer</RootNamespace>
-    <AssemblyName>CompetenceAppM152.DataAccessLayer</AssemblyName>
+    <RootNamespace>CompetenceAppM152.Server.DataAccessLayer</RootNamespace>
+    <AssemblyName>CompetenceAppM152.Server.DataAccessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -61,7 +61,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CompetenceAppM152.Common\CompetenceAppM152.Common.csproj">
+      <Project>{1fb286f2-1d74-4628-95c2-832de7cd6425}</Project>
+      <Name>CompetenceAppM152.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

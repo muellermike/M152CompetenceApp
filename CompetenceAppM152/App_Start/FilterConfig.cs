@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace CompetenceAppM152
+namespace CompetenceAppM152.Client.UI.Web
 {
     public class FilterConfig
     {

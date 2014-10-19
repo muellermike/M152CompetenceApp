@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace CompetenceAppM152
+namespace CompetenceAppM152.Client.UI.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
