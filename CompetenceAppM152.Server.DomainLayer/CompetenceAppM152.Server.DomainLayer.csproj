@@ -43,6 +43,10 @@
     <Compile Include="Services\GalleryService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CompetenceAppM152.Common\CompetenceAppM152.Common.csproj">
+      <Project>{1fb286f2-1d74-4628-95c2-832de7cd6425}</Project>
+      <Name>CompetenceAppM152.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CompetenceAppM152.DataAccessLayer\CompetenceAppM152.Server.DataAccessLayer.csproj">
       <Project>{39e5ef3f-f423-4938-8615-28b99f0a817f}</Project>
       <Name>CompetenceAppM152.Server.DataAccessLayer</Name>

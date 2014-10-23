@@ -52,5 +52,27 @@ namespace CompetenceAppM152.Server.DataAccessLayer.Repositories
             }
             return outGalleries;
         }
+
+        public bool InsertNewGallery(Gallery gallery)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection();
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO gallery VALUES ({0}, {1}, {2}, {3})";
+                cmd.CommandText = string.Format(cmd.CommandText, gallery.Identifier, gallery.Name, gallery.Description, "NULL");
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

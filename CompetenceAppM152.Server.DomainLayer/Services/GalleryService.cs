@@ -16,5 +16,10 @@ namespace CompetenceAppM152.Server.DomainLayer.Services
         {
             return _galleryRepo.GetGalleries();
         }
+
+        public bool CreateNewGallery(Gallery gallery)
+        {
+            return _galleryRepo.InsertNewGallery(gallery);
+        }
     }
 }

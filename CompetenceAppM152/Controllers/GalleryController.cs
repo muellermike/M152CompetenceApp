@@ -12,14 +12,13 @@ namespace CompetenceAppM152.Client.UI.Web.Controllers
     public class GalleryController : Controller
     {
         private GalleryViewModel _viewModel;
+        private GalleryService _galleryService = new GalleryService();
 
         // GET: Gallery
         public ActionResult Index()
         {
-
-            GalleryService galleryService = new GalleryService();
             _viewModel = new GalleryViewModel();
-            _viewModel.Galleries = galleryService.GetGalleries();
+            _viewModel.Galleries = _galleryService.GetGalleries();
 
             return View(_viewModel);
         }
@@ -33,6 +32,7 @@ namespace CompetenceAppM152.Client.UI.Web.Controllers
 
         public ActionResult Create(GalleryViewModel viewModel)
         {
+            _galleryService.CreateNewGallery(viewModel.NewGallery);
             return null;
         }
     }
