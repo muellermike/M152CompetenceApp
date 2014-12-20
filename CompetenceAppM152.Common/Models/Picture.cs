@@ -25,6 +25,15 @@ namespace CompetenceAppM152.Common.Models
             _galleryFK = gallery.Identifier;
         }
 
+        public Picture(Guid id, string title, string desc, string path, Guid galleryFK)
+        {
+            _identifier = id;
+            _title = title;
+            _description = desc;
+            _path = path;
+            _galleryFK = galleryFK;
+        }
+
         public Picture(Guid id, string path)
         {
             _identifier = id;

@@ -1,0 +1,16 @@
+﻿@model CompetenceAppM152.Client.UI.Web.VieModels.GalleryViewModel
+
+@{
+    ViewBag.Title = "SelectTitlePicture";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Select titlepicture for gallery @Model.SelectedGallery.Name</h2>
+
+@using (Html.BeginForm("UploadTitlePicture", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Label(Model.SelectedGallery.Name)
+    <input type="file" name="SelectedTitlePicture" id="SelectedTitlePicture" />
+    <br />
+    <input type="submit" value="upload"/>
+}

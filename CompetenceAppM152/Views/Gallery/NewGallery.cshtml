@@ -15,18 +15,18 @@
         <h4>Gallery</h4>
         <hr />
         <div class="form-group">
-            @Html.LabelFor(model => model.NewGallery.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SelectedGallery.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewGallery.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewGallery.Name, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SelectedGallery.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SelectedGallery.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NewGallery.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SelectedGallery.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewGallery.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NewGallery.Description, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SelectedGallery.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SelectedGallery.Description, "", new { @class = "text-danger" })
             </div>
         </div>
 

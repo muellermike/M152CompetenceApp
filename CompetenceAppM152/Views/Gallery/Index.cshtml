@@ -10,23 +10,36 @@
 <h2>Gallery</h2>
 @Html.ActionLink("Neues Album erstellen", "NewGallery")
 
-@{
-    int counter = 1;
-}
 <div class="container">
     @foreach (var g in Model.Galleries)
     {
         <div class="row" style="margin-bottom:15px">
-            <div class="@string.Format("col-md-{0}", counter.ToString())">
-                @if (g.TitlePicture == null)
-                {
-                    <img src="~/Content/app/img/noPictureAvailable.jpg?width=200" alt="no image available" />
-                }
-                else
-                {
-                    <img src="@Url.Content(g.TitlePicture.Path)" alt="picture" />
-                }
+            <div>
+                <a href="@Url.Action("ShowPictures", "Gallery", new { id = g.Identifier})"
+                   title="Gallerie anzeigen">
+                    @if (g.TitlePicture == null)
+                    {
+                        <img src="~/Content/app/img/noPictureAvailable.jpg?width=200" alt="no image available" />
+                    }
+                    else
+                    {
+                        <img src="@Url.Content(g.TitlePicture.Path)" alt="picture" />
+                    }
+                </a>
+                <br />
+                @g.Name
+                @Html.ActionLink("Delete", "DeleteGallery", "Gallery", new { id = g.Identifier }, null)
             </div>
         </div>
     }
+
+    @*<div>
+            <video width="700" height="400" controls>
+                <source src="~/Content/app/mov/StoryboardClip.mov" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>*@
 </div>
+@*<div id="banner">
+        @Html.Partial("WerbungPartial")
+    </div>*@

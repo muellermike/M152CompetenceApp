@@ -1,0 +1,80 @@
+﻿<canvas id="werbeBanner" width="300" height="250" style="border:1px solid #000000;">
+
+</canvas>
+
+<script type="text/javascript">
+    // get canvas element and get canvas context
+    var canvas = document.getElementById("werbeBanner");
+    canvas.addEventListener('click', function () {
+        window.location = "https://google.com";
+    });
+
+    var ctx = canvas.getContext("2d");
+
+    var targetX = 0,
+        targetY = 0,
+        x = 10,
+        y = 10,
+        xOld = 10,
+        yOld = 10,
+        velX = 0,
+        velY = 0,
+        speed = 5;
+
+    function update() {
+        var tx = targetX - x,
+            ty = targetY - y,
+            dist = Math.sqrt(tx * tx + ty * ty),
+            rad = Math.atan2(ty, tx),
+            angle = rad / Math.PI * 180;
+
+        velX = (tx / dist) * speed;
+        velY = (ty / dist) * speed;
+
+        x += velX;
+        y += velY;
+
+        if (x < xOld - 1 || x > xOld + 1 || y < yOld - 1 || x > xOld + 1) {
+            ctx.clearRect(0, 0, 300, 250);
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            xOld = x;
+            yOld = y;
+            ctx.fill();
+        }
+
+        // draw rectangle
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 75);
+
+        // draw path
+        ctx.moveTo(0, 0);
+        ctx.lineTo(500, 500);
+        ctx.stroke();
+
+        setTimeout(update, 25);
+
+    }
+
+    update();
+
+    // draw circle
+    ctx.beginPath();
+    var circle = ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    canvas.addEventListener('mousemove', function (evt) {
+        var rect = canvas.getBoundingClientRect();
+        targetX = evt.clientX - rect.left;
+        targetY = evt.clientY - rect.top;
+    }, false);
+
+    // getMousePos Event
+    //function getMousePos(canvas, evt) {
+    //    var rect = canva.getBoundingClientRect();
+    //    return {
+    //        x: evt.clientX - rect.left,
+    //        y: evt.clientY - rect.top
+    //    };
+    //}
+</script>

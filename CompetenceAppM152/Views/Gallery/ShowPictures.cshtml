@@ -1,0 +1,28 @@
+﻿@model CompetenceAppM152.Client.UI.Web.VieModels.GalleryPicturesViewModel
+@using CompetenceAppM152.Common.Models
+
+@{
+    ViewBag.Title = "ShowPictures";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Gallery.Name</h2>
+@Model.Gallery.Description
+
+@foreach (Picture p in Model.Pictures)
+{
+    <div>
+        @*<img src="@p.Path" alt="@p.Title" />*@
+        <img src="@Url.Content(p.Path)" alt="@p.Path" />
+        <br />
+        @p.Title
+    </div>
+    <br />
+}
+
+@if (Model.Pictures.Count <= 0)
+{
+    <div>
+        <p>Keine Bilder vorhanden.</p>
+    </div>
+}

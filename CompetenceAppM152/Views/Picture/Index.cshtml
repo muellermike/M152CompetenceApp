@@ -1,0 +1,17 @@
+﻿@model CompetenceAppM152.Client.UI.Web.VieModels.GalleryPicturesViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@foreach (var p in Model.Pictures)
+{
+    <div>
+        @*<img src="@Url.Content(p.Path)" alt="picture" />*@
+        <br />
+        @p.Title
+    </div>
+}
