@@ -72,6 +72,7 @@ namespace CompetenceAppM152.Client.UI.Web.Controllers
                 viewModel.SelectedTitlePicture.SaveAs(Url.Content(url));
                 Picture picture = new Picture(Guid.NewGuid(), "Titlepicture", "Titlepicture", url, viewModel.SelectedGallery.Identifier);
                 viewModel.SelectedGallery.TitlePicture = picture;
+                //viewModel.SelectedGallery.TitlePicture.Identifier = picture.Identifier;
                 _galleryService.SaveTitlePicture(picture);
             }
 

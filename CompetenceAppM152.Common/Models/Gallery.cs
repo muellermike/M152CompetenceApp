@@ -11,7 +11,6 @@ namespace CompetenceAppM152.Common.Models
         private Guid _identifier;
         private string _name;
         private string _description;
-        private Guid _titlepictureIdentifier;
         private Picture _titlePicture = null;
         private List<Picture> _pictures = null;
 
@@ -26,7 +25,6 @@ namespace CompetenceAppM152.Common.Models
             _name = name;
             _description = desc;
             _titlePicture = pic;
-            _titlepictureIdentifier = pic.Identifier;
         }
 
         public Gallery(Guid id, string name, string desc)
@@ -52,11 +50,6 @@ namespace CompetenceAppM152.Common.Models
         {
             get { return _description; }
             set { _description = value; }
-        }
-
-        public Guid TitlePictureIdentifier
-        {
-            get { return _titlepictureIdentifier; }
         }
 
         public Picture TitlePicture

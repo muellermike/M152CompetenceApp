@@ -192,15 +192,15 @@ namespace CompetenceAppM152.Server.DataAccessLayer.Repositories
                 MySqlCommand cmd = conn.CreateCommand();
 
                 cmd.CommandText = "INSERT INTO picture (PK, Title, Description, Path, GalleryFK) VALUES (@PicturePK, @Title, @Desc, @Path, @GalleryFK)";
-                cmd.Parameters.AddWithValue("@PicturePK", titlePicture.Identifier);
+                cmd.Parameters.AddWithValue("@PicturePK", titlePicture.Identifier.ToString());
                 cmd.Parameters.AddWithValue("@Title", titlePicture.Title);
                 cmd.Parameters.AddWithValue("@Desc", titlePicture.Description);
                 cmd.Parameters.AddWithValue("@Path", titlePicture.Path);
-                cmd.Parameters.AddWithValue("@GalleryFK", titlePicture.GalleryFK);
+                cmd.Parameters.AddWithValue("@GalleryFK", titlePicture.GalleryFK.ToString());
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
 
-                cmd.CommandText = "UPDATE gallery SET TitlepictureFK = '@PicturePK' WHERE PK = '@GalleryFK'";
+                cmd.CommandText = "UPDATE gallery SET TitlepictureFK = @PicturePK WHERE PK = @GalleryFK";
                 cmd.Prepare();
                 cmd.ExecuteNonQuery();
 
