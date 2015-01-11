@@ -10,6 +10,8 @@ namespace CompetenceAppM152.Client.UI.Web.VieModels
     {
         public List<Picture> Pictures { get; set; }
 
+        public HttpPostedFileBase NewPicture { get; set; }
+
         public Gallery Gallery { get; set; }
     }
 }

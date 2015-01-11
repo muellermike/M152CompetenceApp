@@ -129,6 +129,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VieModels\GalleryPicturesViewModel.cs" />
     <Compile Include="VieModels\GalleryViewModel.cs" />
+    <Compile Include="VieModels\PictureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\app\img\IMG_0014.JPG" />
@@ -963,6 +964,8 @@
     <Content Include="Views\Gallery\SelectTitlePicture.cshtml" />
     <Content Include="Views\Shared\WerbungPartial.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Gallery\ChooseNewPicture.cshtml" />
+    <Content Include="Views\Gallery\ShowPicture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

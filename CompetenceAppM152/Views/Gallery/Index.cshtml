@@ -8,7 +8,7 @@
 }
 
 <h2>Gallery</h2>
-@Html.ActionLink("Neues Album erstellen", "NewGallery")
+@Html.ActionLink("Album hinzufügen", "NewGallery")
 
 <div class="container">
     @foreach (var g in Model.Galleries)
@@ -23,7 +23,7 @@
                     }
                     else
                     {
-                        <img src="@Url.Content(g.TitlePicture.Path)" alt="picture" />
+                        <img src="@Url.Content("~/Content/app/img/" + g.Name + "/" + g.TitlePicture.Path)?width=200" alt="picture" />
                     }
                 </a>
                 <br />

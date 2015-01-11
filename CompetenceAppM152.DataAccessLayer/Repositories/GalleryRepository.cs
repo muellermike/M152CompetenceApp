@@ -214,5 +214,100 @@ namespace CompetenceAppM152.Server.DataAccessLayer.Repositories
             }
         }
 
+
+        public bool SavePicture(Picture picture)
+        {
+            MySqlConnection conn = new MySqlConnection();
+            try
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "INSERT INTO picture (PK, Title, Description, Path, GalleryFK) VALUES (@PicturePK, @Title, @Desc, @Path, @GalleryFK)";
+                cmd.Parameters.AddWithValue("@PicturePK", picture.Identifier.ToString());
+                cmd.Parameters.AddWithValue("@Title", picture.Title);
+                cmd.Parameters.AddWithValue("@Desc", picture.Description);
+                cmd.Parameters.AddWithValue("@Path", picture.Path);
+                cmd.Parameters.AddWithValue("@GalleryFK", picture.GalleryFK.ToString());
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                conn.Close();
+                return false;
+            }
+        }
+
+        public Picture GetPictureByID(Guid id)
+        {
+            Picture picture = null;
+
+            MySqlConnection conn = new MySqlConnection();
+            try
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT PK, Path FROM picture p WHERE p.PK = @ID";
+                cmd.Parameters.AddWithValue("ID", id.ToString());
+
+                cmd.Prepare();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                        picture = new Picture(new Guid(reader.GetString("PK")), reader.GetString("Path"));
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            conn.Close();
+
+            return picture;
+        }
+
+        public Gallery GetGalleryByPicture(Picture picture)
+        {
+            Gallery gallery = null;
+
+            MySqlConnection conn = new MySqlConnection();
+            try
+            {
+                conn.ConnectionString = _connectionString;
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT PK, Name, Description FROM gallery g WHERE g.PK = (SELECT GalleryFK FROM picture p WHERE p.PK = @ID)";
+                cmd.Parameters.AddWithValue("ID", picture.Identifier.ToString());
+
+                cmd.Prepare();
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    gallery = new Gallery(new Guid(reader.GetString("PK")), reader.GetString("Name"), reader.GetString("Description"));
+                }
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+            conn.Close();
+
+            return gallery;
+        }
     }
 }

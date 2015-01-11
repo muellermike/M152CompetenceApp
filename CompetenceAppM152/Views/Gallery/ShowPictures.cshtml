@@ -9,20 +9,29 @@
 <h2>@Model.Gallery.Name</h2>
 @Model.Gallery.Description
 
+@{
+    TempData["SelectedGallery"] = Model.Gallery;
+    TempData["Pictures"] = Model.Pictures;
+}
+
+@Html.ActionLink("Bild hochladen", "ChooseNewPicture")
+
 @foreach (Picture p in Model.Pictures)
 {
     <div>
-        @*<img src="@p.Path" alt="@p.Title" />*@
-        <img src="@Url.Content(p.Path)" alt="@p.Path" />
+        <a href="@Url.Action("ShowPicture", new { id = p.Identifier })">
+            <img src="@Url.Content("~/Content/app/img/" + Model.Gallery.Name + "/" + p.Path)?width=200" alt="@p.Path" />
+        </a>
         <br />
-        @p.Title
     </div>
     <br />
+    }
+
+    @if (Model.Pictures.Count <= 0)
+{
+        <div>
+            <p>Kein Bild vorhanden.</p>
+        </div>
 }
 
-@if (Model.Pictures.Count <= 0)
-{
-    <div>
-        <p>Keine Bilder vorhanden.</p>
-    </div>
-}
+@Html.ActionLink("Back to Overview", "Index")

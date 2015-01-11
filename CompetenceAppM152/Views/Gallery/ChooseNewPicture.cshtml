@@ -1,0 +1,21 @@
+﻿@model CompetenceAppM152.Client.UI.Web.VieModels.GalleryPicturesViewModel
+
+@{
+    ViewBag.Title = "ChooseNewPicture";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    TempData["SelectedGallery"] = Model.Gallery;
+}
+<h2>Select new picture for @Model.Gallery.Name</h2>
+
+@using (Html.BeginForm("UploadPicture", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Label(Model.Gallery.Name)
+    <input type="file" name="NewPicture" id="NewPicture" />
+    <br />
+    <input type="submit" value="upload" />
+}
+
+@Html.ActionLink("Kein Bild auswählen", "Index")

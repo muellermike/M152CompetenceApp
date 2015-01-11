@@ -1,0 +1,11 @@
+﻿@model CompetenceAppM152.Client.UI.Web.VieModels.PictureViewModel
+@using CompetenceAppM152.Common.Models
+
+@{
+    ViewBag.Title = "ShowPicture";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bild</h2>
+
+<img src="@Url.Content("~/Content/app/img/" +  Model.Gallery.Name +"/" + Model.Picture.Path)" alt="@Model.Picture.Path" />

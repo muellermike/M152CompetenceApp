@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Neues Album erstellen</h2>
+<h2>Neues Bild hochladen</h2>
 
 @using (Html.BeginForm("Create", "Gallery"))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Gallery</h4>
+        <h4>Bild</h4>
         <hr />
         <div class="form-group">
             @Html.LabelFor(model => model.SelectedGallery.Name, htmlAttributes: new { @class = "control-label col-md-2" })

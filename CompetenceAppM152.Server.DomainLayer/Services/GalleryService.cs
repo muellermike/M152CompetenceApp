@@ -41,5 +41,20 @@ namespace CompetenceAppM152.Server.DomainLayer.Services
         {
             return _galleryRepo.SaveTitlePicture(titlePicture);
         }
+
+        public bool SavePicture(Picture picture)
+        {
+            return _galleryRepo.SavePicture(picture);
+        }
+
+        public Picture GetPictureByID(Guid id)
+        {
+            return _galleryRepo.GetPictureByID(id);
+        }
+
+        public Gallery GetGalleryByPicture(Picture picture)
+        {
+            return _galleryRepo.GetGalleryByPicture(picture);
+        }
     }
 }
